@@ -24,9 +24,9 @@ background-color: hsl(0, 0%, 95%);
   }
   #keys{
     display: grid;
-    grid-template-columns: repeat(4. 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    padding: 25PX;
+    padding: 25px;
   }
   button{
     width: 100px;
@@ -51,6 +51,6 @@ background-color: hsl(39, 100%, 55%);
    .operator-btn:hover{
 background-color: hsl(39, 100%, 70%);
    }
-    .operator-btn-active{
+    .operator-btn:active{
 background-color: hsl(39, 100%, 85%);
     }

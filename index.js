@@ -1,20 +1,25 @@
 // CALCULATOR PROGRAM
 
-const display= document.getElementById(display);
+const display = document.getElementById("display");
 
-function appendToDisplay(input){
-display.value += input;
+function appendToDisplay(input) {
+    display.value += input;
 }
 
-function cleardisplay(){
-display.value= "";
+function clearDisplay() {
+    display.value = "";
 }
 
-function calculate(){
-    try{
-        display.value = eval(display.value);
+function calculate() {
+    // Only digits, operators, dot and parentheses may reach eval.
+    if (!/^[0-9+\-*/(). ]+$/.test(display.value)) {
+        display.value = "Error";
+        return;
     }
-    catch(error){
-        display.value = "Error"
+    try {
+        const answer = eval(display.value);
+        display.value = Number.isFinite(answer) ? answer : "Error";
+    } catch (error) {
+        display.value = "Error";
     }
 }
